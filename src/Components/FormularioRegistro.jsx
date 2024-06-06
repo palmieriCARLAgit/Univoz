@@ -136,22 +136,22 @@ const FormularioRegistro = ({ RegisterForm }) => {
   return (
     <>
       <div className="register-form" ref={RegisterForm}>
-        <div className="form-title">
+        <div className="form-title" id='tituloFormulario'>
           <span>Regístrate</span>
         </div>
-        <div className="form-inputs">
-          <div className="input-box">
-            <input type="text" className="input-field" id="username" placeholder="Nombre del usuario" onChange={(e) => inputUserName(e.target.value)} value={username} />
+        <div className="form-inputs" id='cajaNombre'>
+          <div className="input-box" id='iconsblancos'>
+            <input type="text" className="cajatext" id="username" placeholder="Nombre del usuario" onChange={(e) => inputUserName(e.target.value)} value={username} />
             <i className='bx bx-user icon'></i>
           </div>
-          <div className="input-box">
-            <input type="email" className="input-field" id="email" placeholder="Correo electronico" onChange={(e) => inputEmail(e.target.value)} value={email} />
+          <div className="input-box" id='iconsblancos'>
+            <input type="email" className="cajatext" id="email" placeholder="Correo electronico" onChange={(e) => inputEmail(e.target.value)} value={email} />
             <i className="bx bx-envelope icon"></i>
           </div>
-        <div className="input-box">
+        <div className="input-box" id='iconsblancos'>
           <input
             type={showPassword? 'text' : 'password'}
-            className="input-field"
+            className="cajatext"
             id="password"
             placeholder="Contraseña"
             onChange={(e) => inputpassword(e.target.value)}
@@ -160,10 +160,10 @@ const FormularioRegistro = ({ RegisterForm }) => {
           <i className={showPassword? 'bx bx-hide' : 'bx bx-show-alt'} onClick={toggleShowPassword}></i>
         </div>
 
-        <div className="input-box">
+        <div className="input-box" id='iconsblancos'>
           <input
             type={showPassword2? 'text' : 'password'}
-            className="input-field"
+            className="cajatext"
             id="password2"
             placeholder="Repita Contraseña"
             onChange={(e) => inputpassword2(e.target.value)}
@@ -172,8 +172,8 @@ const FormularioRegistro = ({ RegisterForm }) => {
           />
           <i className={showPassword2? 'bx bx-hide' : 'bx bx-show-alt'} onClick={toggleShowPassword2}></i>
         </div>
-          <div className="input-box">
-            <button className="input-submit btn-reg" onClick={handleRegistrar}>
+          <div className="input-box" id='iconsblancos'>
+            <button className="input-submit btn-reg" id= "iniciaLogin"  onClick={handleRegistrar}>
               <span>Registrarse</span>
               <i className="bx bx-right-arrow-alt"></i>
             </button>

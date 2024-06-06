@@ -90,14 +90,14 @@ const FormularioLogin = ({ LoginForm }) => {
   return (
     <>
       <div className="login-form" ref={LoginForm}>
-        <div className="form-title">
+        <div className="form-title" id='tituloFormulario'>
           <span>Inicia Sesión</span>
         </div>
-        <div className="form-inputs">
-          <div className="input-box">
+        <div className="form-inputs" id='cajaNombre'>
+          <div className="input-box" id='iconsblancos'>
             <input
               type="text"
-              className="input-field"
+              className="cajatext"
               id="usuario"
               placeholder="Nombre del usuario"
               onChange={(e) => inputUsername(e.target.value)}
@@ -105,10 +105,10 @@ const FormularioLogin = ({ LoginForm }) => {
             />
             <i className='bx bx-user icon'></i>
           </div>
-          <div className="input-box">
+          <div className="input-box" id='iconsblancos'>
             <input
               type={showPassword ? "text" : "password"}
-              className="input-field"
+              className="cajatext"
               id="contrasena"
               placeholder="Contraseña"
               onChange={(e) => inputpassword(e.target.value)}
@@ -121,8 +121,8 @@ const FormularioLogin = ({ LoginForm }) => {
           <div className="forget-pass">
             <a href="#">Olvidé mi contraseña</a>
           </div>
-          <div className="input-box">
-            <button className="input-submit" type="submit" onClick={handleLogin}>
+          <div className="input-box" id='iconsblancos'>
+            <button className="input-submit" id= "iniciaLogin" type="submit" onClick={handleLogin}>
               <span>Iniciar sesión</span>
               <i className="bx bx-right-arrow-alt"></i>
             </button>

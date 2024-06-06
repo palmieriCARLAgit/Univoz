@@ -2,7 +2,7 @@
 ::-ms-reveal {
     display: none;
 }
-.col-1 {
+#colLogin {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,11 +15,11 @@
 
 }
 
-.image-layer {
+.image-layerLogin {
     position: absolute;
 }
 
-.form-image-main {
+.form-imageLogin-main {
     width: 400px;
     align-items: center;
     justify-content: center;
@@ -28,18 +28,18 @@
 
 }
 
-.form-image {
+.form-imageLogin {
     width: 400px;
     position: absolute;
     left: 0;
     padding: 38px;
 }
 
-.fi-1 {
+.fi-1Login {
     animation: scale-down 4s ease-in-out alternate infinite;
 }
 
-.fi-2 {
+.fi-2Login {
     animation: up-down 4s ease-in-out alternate infinite;
 }
 
@@ -55,34 +55,34 @@
     }
 }
 
-.form-image-1 {
+.form-imageee-1 {
     width: 100px;
     position: unset;
     margin: 20px;
 }
 
-.form-image-2 {
+.form-imageee-2 {
     width: 50px;
     margin-left: 20px;
     margin: 35px;
     padding: 1px;
 }
 
-.form-image-3 {
+.form-imageee-3 {
     width: 90px;
     left: 0;
     position: absolute;
     margin: 20px;
 }
 
-.col-2 {
+.colLogin-2 {
     position: relative;
     width: 50%;
     padding: 10px;
     overflow: hidden;
 }
 
-.btn-box {
+#botonUsuarios{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +90,7 @@
 
 }
 
-.btn {
+.btnLogin {
     font-weight: 50;
     border: none;
     border-radius: 80px;
@@ -127,31 +127,30 @@
     margin-block: 5px 10px;
 }
 
-.form-title {
+#tituloFormulario {
     margin: 10px 0;
     color: var(--text);
     font-size: 25px;
     font-weight: 400;
 }
 
-.form-inputs {
+#cajaNombre {
     width: 100%;
 }
 
-.input-box {
+#iconsblancos {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.input-box i {
+#iconsblancos i {
     position: absolute;
-    right: 10px; /* Ajusta según sea necesario */
+    right: 10px; 
     cursor: pointer;
     color:white;
 }
-
-.input-field {
+.cajatext {
     width: 100%;
     height: 40px;
     padding: 0 15px;
@@ -163,7 +162,8 @@
     
 }
 
-::placeholder {
+
+.cajatext::placeholder {
     color: var(--text);
     font-size: 15px;
 }
@@ -192,7 +192,7 @@
     text-decoration: underline;
 }
 
-.input-submit {
+#iniciaLogin {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,7 +216,7 @@
     background-color: #45074a;
 }
 
-.social-login {
+/* .social-login {
     display: flex;
     gap: 20px;
     margin-top: 20px;
@@ -238,16 +238,16 @@
 
 .social-login i:hover {
     transform: scale(0.8);
-}
+} */
 
 @media(max-width: 892px) {
-    .container-fluid {
+    #cajaPadre {
         width: 100%;
     }
-    .col-1 {
+    #colLogin {
         display: none;
     }
-    .col-2 {
+    .colLogin-2 {
         width: 100%;
     }
 }
