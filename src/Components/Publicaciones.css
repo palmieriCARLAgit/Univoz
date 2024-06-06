@@ -1,0 +1,59 @@
+@media (max-width: 768px) {
+  /* .sidebar-display{
+       display: none;
+   }  */
+
+  .card {
+    margin-right: 20px;
+  }
+}
+
+#tarjePrincipal {
+  max-width: auto;
+  margin: auto;
+  padding: 1.25rem;
+  border: 0;
+}
+
+#tarjeta {
+  border-width: 1px;
+  border-color: rgba(84, 65, 65, 0.541);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(88, 88, 93, 0.221);
+  backdrop-filter: blur(30px);
+}
+
+.badge {
+  background-color: #ae9dd0 !important;
+  font-size: 15px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+
+.badge:hover {
+  background-color: #d3c0fa !important;
+}
+
+#cajabotoncrear {
+  display: contents;
+}
+
+#boton-crear {
+  border: #131213;
+  background-color: #71077ba6 !important;
+  color: #f8f9fa;
+  border-radius: 10px;
+  font-weight: 400;
+}
+
+#boton-crear:hover {
+  background-color: #b42789 !important;
+}
+
+#boton-publicar {
+  background-color: #71077ba6 !important ;
+  border-bottom: none;
+}
+#boton-publicar:hover {
+  background-color: #b42789 !important;
+}
