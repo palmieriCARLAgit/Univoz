@@ -17,8 +17,7 @@ const CrearPublicaciones = () => {
             Crear publicación +
           </button>
         </div>
-      </div>
-
+      </div> 
       <ModalPublicaciones />
     </>
   );

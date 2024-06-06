@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 
-const ModalPublicaciones = () => {
+const Modal = () => {
   
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
@@ -9,11 +9,11 @@ const ModalPublicaciones = () => {
   
   // useEffect para realizar una acción cuando se actualicen los estados
   useEffect(() => {
-
+    // Puedes realizar alguna acción cada vez que los estados cambien
     
   }, [title, message, tag]);
 
-
+  // Función para manejar el clic del botón Publicar
   const handlePublish = () => {
     // Validar que todos los campos estén llenos
     if (!title || !message || !tag) {
@@ -26,7 +26,18 @@ const ModalPublicaciones = () => {
       return;
     }
 
-    // Mostrar la alerta de confirmación usando SweetAlert2
+    // Validar longitud del título, mensaje y tag
+    if (title.length < 3 || message.length < 3 || tag.length < 3) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Todos los campos deben tener al menos 3 caracteres',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+
+    // alerta
     Swal.fire({
       title: 'Confirmar publicación',
       html: `¿Estás seguro de que deseas publicar esto?<br><br><strong>Mensaje:</strong> ${message}<br><strong>Tag:</strong> ${tag}`,
@@ -38,15 +49,16 @@ const ModalPublicaciones = () => {
     }).then((result) => {
       // Si el usuario confirma la publicación, guarda los datos
       if (result.isConfirmed) {
-        
+        // Aquí puedes enviar los datos a tu backend o realizar cualquier otra acción
+        console.log(title);
         console.log(message);
         console.log(tag);
-        // Limpiar los inputs
+        
         setTitle('');
         setMessage('');
         setTag('');
-
-        Swal.fire('Publicado!', 'Tu publicación ha sido publicada.', 'success');
+        
+        Swal.fire('Publicado!', 'Tu publicación ha sido publicada con éxito.', 'success');
       }
     });
   }
@@ -104,4 +116,4 @@ const ModalPublicaciones = () => {
   );
 }
 
-export default ModalPublicaciones;
+export default Modal;

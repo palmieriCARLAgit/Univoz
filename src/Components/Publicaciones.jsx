@@ -72,4 +72,4 @@ const Publicaciones = () => {
   );
 };
 
-export default Publicaciones
+export default Publicaciones;
