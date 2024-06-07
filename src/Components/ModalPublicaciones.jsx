@@ -53,14 +53,18 @@ const Modal = () => {
         console.log(title);
         console.log(message);
         console.log(tag);
-        
-        setTitle('');
-        setMessage('');
-        setTag('');
+
+        handleCancelar();
         
         Swal.fire('Publicado!', 'Tu publicación ha sido publicada con éxito.', 'success');
       }
     });
+  }
+
+  const handleCancelar = () => {
+    setTitle('');
+    setMessage('');
+    setTag('');
   }
 
   return (
@@ -106,7 +110,7 @@ const Modal = () => {
               </form>
             </div>
             <div className="modal-footer">
-              <button id="boton-cancelar" type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button id="boton-cancelar" type="button" className="btn btn-outline-secondary" onClick={handleCancelar} data-bs-dismiss="modal">Cancelar</button>
               <button id="boton-publicar" type="button" className="btn btn-secondary" onClick={handlePublish}>Publicar</button>
             </div>
           </div>

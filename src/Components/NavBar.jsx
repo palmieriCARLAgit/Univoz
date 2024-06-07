@@ -1,4 +1,5 @@
 import React from 'react';
+import './Estructura.css';
 
 function Navbar() {
     return (
@@ -10,7 +11,7 @@ function Navbar() {
                     <input type="text" className="search-bar" placeholder="Buscar en Univoz..." /> {/* Search bar */}
                     <ul className="nav"> { /*Navigation items list*/}
                         <li className="nav-item" style={{ paddingTop: '5px', paddingRight: '15px' }}>
-                            <a href="#create-post" className="create-post btn">Iniciar sesión</a> {/* Navigation item (Login) */}
+                            <a href="/Login" className="create-post btn">Iniciar sesión</a> {/* Navigation item (Login) */}
                         </li>
                     </ul>
                 </nav>

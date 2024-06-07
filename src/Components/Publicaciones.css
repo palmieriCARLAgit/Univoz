@@ -34,8 +34,10 @@
   background-color: #d3c0fa !important;
 }
 
-#cajabotoncrear {
-  display: contents;
+#cajabotoncrear{
+
+  padding-left: 1.25rem;
+
 }
 
 #boton-crear {

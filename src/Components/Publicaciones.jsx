@@ -1,3 +1,5 @@
+import './Publicaciones.css';
+import CrearPublicaciones from "./CrearPublicaciones.jsx";
 function createData(
     id,
     imagen,
@@ -50,7 +52,8 @@ function createData(
 const Publicaciones = () => {
   return (
     <>
-    {publicacionesCard.map((publicacion, index) => (
+      <CrearPublicaciones/>
+      {publicacionesCard.map((publicacion, index) => (
         <div key={index}>
           <div className="card cardprincipal" id="tarjePrincipal" >
             <div className="card-body" id="tarjeta">

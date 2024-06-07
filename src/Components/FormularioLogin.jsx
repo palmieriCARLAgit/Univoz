@@ -2,12 +2,14 @@ import React, { useState , useEffect} from 'react';
 import Swal from 'sweetalert2';
 import 'boxicons/css/boxicons.min.css';
 import './Formulario.css'
+import {useNavigate} from "react-router-dom";
 
 const FormularioLogin = ({ LoginForm }) => {
   const [userName, setUserName] = useState('');
   const [pass, setPass] = useState('');
   const [flagLogin, setFlaglogin] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log("estoy usando useEffect");
@@ -45,13 +47,15 @@ const FormularioLogin = ({ LoginForm }) => {
                 <h4 style="text-align='left'">Contraseña: ${pass}</h4>
               `,
               showConfirmButton: false,
-              timer: 5500
+              timer: 2500
             });
           }
         }).then((result) => {
+
           if (result && result.dismiss === Swal.DismissReason.timer) {
-            console.log("I was closed by the timer");
+            console.log('I was closed by the timer');
           }
+          navigate('/');
         }).catch((error) => {
           console.error("Error:", error);
         });

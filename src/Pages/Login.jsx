@@ -29,8 +29,8 @@ const Login = () => {
   return (
       <>
       <div id="BodyLogin">
-          <div className="container-fluid" id='cajaPadre'>
-              <div className="col col-1" id="colLogin">
+          <div  id='cajaPadre'>
+              <div  id="colLogin">
                   <div className="image-layerLogin">
                       <img src={UnivozImage} className="form-imageLogin-main fi-2Login" />
                       <img src={WhatsAppImage}
@@ -41,7 +41,7 @@ const Login = () => {
                            className="form-imageee-3 fi-1Login"/>
                   </div>
               </div>
-              <div className="col colLogin-2">
+              <div className="colLogin-2">
                   <div className="btn-box" id="botonUsuarios">
                       <button type="button" onClick={handleCambioLogin } className="btnLogin btn-1" id="login">Inicia Sesión</button>
                       <button onClick={handleCambioRegister} className="btnLogin btn-2" id="register">Regístrate</button>

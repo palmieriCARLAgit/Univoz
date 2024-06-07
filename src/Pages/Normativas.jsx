@@ -1,3 +1,4 @@
+import '../Components/Estructura.css';
 function createData(id, titulo, descripcion, url) {
     return { id, titulo, descripcion, url };
   }
