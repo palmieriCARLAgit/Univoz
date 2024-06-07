@@ -41,8 +41,6 @@
   }
   
   .mv h5 {
-    font-family: "Archivo Black", sans-serif;
-    font-style: normal;
     padding-left: 10px;
     margin-bottom: 0;
     padding-left: 5%;
@@ -74,6 +72,7 @@
     align-items: center;
     backdrop-filter: blur();
     -webkit-backdrop-filter: blur(5px);
+    
   }
   
   .cardQS {
@@ -89,14 +88,14 @@
  box-shadow: 0 8px 32px 0 rgba(88, 88, 93, 0.221);
     margin: 3% 2% 5%;
     }
+   
 
-  /* .cardQS img {
+  .cardQS img {
     display: flex;
     border-radius: 3%;
-    width: 200px;
-    height: 200px;
-    margin-left: 13px;
-  } */
+    padding-right: 5px;
+    padding-left: 5px;
+  }
   .cardQS img {
     border-radius: 3%;
     max-width: 100%;
@@ -118,20 +117,22 @@
     }
   }
 
-  @media (min-width: 992px) {
-    barra {
-      flex-wrap: nowrap;
+  @media only screen and (min-width: 768px) and (max-width: 1199px) {
+    #fotoQS{
+        width: 25rem;
     }
-    div {
-      flex-basis: 33%;
+    #fotoQS2{
+        width: 25rem;
     }
-    h1 {
-      justify-content: start;
+    img {
+        max-width: 100%;
+        height: auto;
+      }
+    .mv{
+        width: 143%;
     }
-    
   }
-  
-  
+ 
   #video {
     position: relative;
     padding-bottom: 70%;
@@ -153,19 +154,11 @@
   } 
   
   #tittleQS {
-    font-family: "Archivo Black", sans-serif;
-    font-style: normal;
-    /* display: inline-block;
-    position: relative; */
     color: #000;
     font-size: 200%;
-    padding: 7px;
-    margin: 0;
-    padding-left: 0;
-  
+    margin: 2%;
     display: flex;
-    justify-content: left;
-    padding-left: 0;
+
   }
   /* termina el css de ABOUT. 
   
