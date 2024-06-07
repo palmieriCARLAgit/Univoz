@@ -1,3 +1,4 @@
+ /* aquí empieza css de ABOUT */
 .pQS {
     height: auto;
     padding: 5%;
@@ -6,6 +7,8 @@
     font-stretch: ultra-expanded;
     padding-bottom: 0;
     text-align: justify;
+    padding-right: 0;
+    
   }
   
   #tittleQS {
@@ -32,10 +35,10 @@
   }
   @keyframes mover-izquierda-derecha {
     from {
-      transform: translate(-20px);
+      transform: translate(-10px);
     }
     to {
-      transform: translate(40px);
+      transform: translate(17px);
     }
   }
   
@@ -45,7 +48,6 @@
     align-items: center;
     justify-content: center;
     align-items: baseline;
-  
     padding: 20px;
   }
   
@@ -68,12 +70,6 @@
       -5px -1px 5px black;
   }
   
-  
-  .cardQS img {
-    border-radius: 3%;
-    max-width: 100%;
-  }
-  
   .mv h5 {
     font-family: "Archivo Black", sans-serif;
     font-style: normal;
@@ -81,33 +77,13 @@
     margin-bottom: 0;
     padding-left: 5%;
     padding-bottom: 1%;
-    /* color: rgb(249, 244, 255);
-    text-shadow: -2px 1px rgba(138, 21, 156, 0.37), -2px 2px hsl(272, 63%, 56%), -5px -1px 5px black */
-  }
-  
-  .mv h5 {
     font-size: 22px;
-    justify-content: center;
-  }
-  
-  .containerQS {
-    margin: 0;
-  
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 3% 10% 2%;
-    margin-left: 9px;
-    margin-right: 9px;
-    margin-top: 9px;
-  
-    border: solid;
-    border-width: 1px;
-    border-color: rgba(84, 65, 65, 0.229);
-    border-radius: 10px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(30px);
-  }
-  
-  
+    justify-content: center;}
+
+    .mv{
+        margin: 4% 4% 4%;
+        margin-left: 0;
+    }
   
   .cont1 .subtittleQS {
     font-family: "Archivo Black", sans-serif;
@@ -118,6 +94,7 @@
     font-size: 125%;
     font-style: italic;
   }
+
   .subtittleQS{
     padding: 6% 3% 0%;
   }
@@ -129,28 +106,35 @@
     -webkit-backdrop-filter: blur(5px);
   }
   
-  
-  
   .cardQS {
     color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.3);
-    padding-bottom: 0%;
+     padding-bottom: 0%;
     margin-left: 9px;
     margin-right: 9px;
     margin-top: 9px;
-  
-    border: solid;
-    border-width: 1px;
-    border-color: rgba(84, 65, 65, 0.229);
-    border-radius: 10px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(30px);
-    margin: 3% 5% 5%;
-    
+    border: 0;
+    /* border-width: 1px; */
+     border-radius: 10px;
+     /* backdrop-filter: blur(30px); */
+ box-shadow: 0 8px 32px 0 rgba(88, 88, 93, 0.221);
+    margin: 3% 2% 5%;
+    }
+
+  /* .cardQS img {
+    display: flex;
+    border-radius: 3%;
+    width: 200px;
+    height: 200px;
+    margin-left: 13px;
+  } */
+  .cardQS img {
+    border-radius: 3%;
+    max-width: 100%;
   }
   
   div {
     flex-basis: 100%;
+    display: block;
   }
   @media (min-width: 768px) {
     barra {
@@ -163,6 +147,20 @@
       justify-content: start;
     }
   }
+
+  @media (min-width: 992px) {
+    barra {
+      flex-wrap: nowrap;
+    }
+    div {
+      flex-basis: 33%;
+    }
+    h1 {
+      justify-content: start;
+    }
+    
+  }
+  
   
   #video {
     position: relative;
@@ -170,8 +168,8 @@
     padding-top: 0px;
     height: 0;
     overflow: hidden;
-   
   }
+
   #video iframe {
     position: absolute;
     top: 0;
@@ -183,7 +181,6 @@
     padding-top: 2%;
     padding-bottom: 3%;
   } 
-  
   
   #tittleQS {
     font-family: "Archivo Black", sans-serif;
@@ -200,3 +197,7 @@
     justify-content: left;
     padding-left: 0;
   }
+  /* termina el css de ABOUT. 
+  
+   ----------------------- */
+  
