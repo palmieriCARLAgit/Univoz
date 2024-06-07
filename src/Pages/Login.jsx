@@ -32,7 +32,7 @@ const Login = () => {
           <div  id='cajaPadre'>
               <div  id="colLogin">
                   <div className="image-layerLogin">
-                      <img src={UnivozImage} className="form-imageLogin-main fi-2Login" />
+                  <a href='/'>  <img src={UnivozImage} className="form-imageLogin-main fi-2Login" /></a>
                       <img src={WhatsAppImage}
                            className="form-imageee-1 fi-1Login"/>
                       <img src={WhatsAppImage}
