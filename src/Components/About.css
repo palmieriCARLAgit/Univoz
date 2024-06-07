@@ -11,37 +11,7 @@
     
   }
   
-  #tittleQS {
-    animation: mover-izquierda-derecha 2s 1;
-    animation-fill-mode: forwards;
-    
-  }
-  #tittleQS1{
-    padding-top: 2%;
-    width: auto;
-  }
-  @keyframes mover-izquierda-derecha {
-    from {
-      transform: translate(-6px);
-    }
-    to {
-      transform: translate(25px);
-    }
-  }
-  
-  .enc2 {
-    animation: mover-izquierda-derecha 2s 1;
-    animation-fill-mode: forwards;
-  }
-  @keyframes mover-izquierda-derecha {
-    from {
-      transform: translate(-10px);
-    }
-    to {
-      transform: translate(17px);
-    }
-  }
-  
+ 
   #encabezado1 {
     display: flex;
     flex-direction: row;
