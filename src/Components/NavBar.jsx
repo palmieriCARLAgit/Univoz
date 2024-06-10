@@ -32,7 +32,7 @@ function Navbar() {
        
     return (
         <>
-       
+       {/* navbar adaptado para que incluya el menu hambuerguesa en un mismo codigo */}
         <header id="headerIdNavbar" >
             <div className=" col navbar position">
             <button  id="abrir-menu" onClick={ClickOpen}><i className="bi bi-list"></i></button> {/*  abrir menu---------->este es el estado inicial*/}
