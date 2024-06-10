@@ -41,6 +41,10 @@
     #lupaIcon{
         display: block;
     }
+    
+    #create-post{
+        display: none;
+    }
     .navbar{
         display: flex;
         justify-content: flex-start;
@@ -132,6 +136,7 @@ padding-left: 5%;}
       font-size: 140%;
      
     }
+    
     .nav.visible {
       opacity: 1;
       visibility: hidden;
