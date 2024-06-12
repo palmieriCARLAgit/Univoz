@@ -1,0 +1,138 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/* empieza el css del menu hamburguesa */
+
+.navbar {
+  background-color: #83259bc2;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+
+}
+.nav {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+#cerrar-menu {
+  display: none;
+  background-color: #ffffff00;
+  border: 0;
+}
+#abrir-menu {
+  display: none;
+  background-color: #ffffff00;
+  border: 0;
+  color: white;
+}
+
+.nav-list {
+  display: none;
+}
+
+/* #searchBurguer{
+    display: none;
+} */
+#lupaIcon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  #lupaIcon {
+    display: block;
+  }
+  .logoext {
+    display: none;
+  }
+  #create-post {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #abrir-menu {
+    display: block;
+    margin-left: 5%;
+  }
+  #cerrar-menu {
+    display: block;
+    margin-left: 5%;
+  }
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+  }
+/* ----------- */
+  #searchBurguer{
+    width: 70%;}
+
+  .hoverActiveCursor {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    cursor: pointer;
+    width: 18rem;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .hoverActiveCursor:hover {
+    background-color: #d6c1e7;
+    border-left: 4px solid #6a1b9a;
+  }
+  .nav {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 65%;
+    align-items: start;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.312);
+    padding: 2rem;
+    gap: 3rem;
+    z-index: 1;
+  }
+  .nav-list {
+    width: 100%;
+    list-style-type: none;
+    align-items: start;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    height: 100vh;
+    padding-left: 0%;
+    gap: 3rem;
+    font-size: 140%;
+  }
+
+  .nav.visible {
+    opacity: 1;
+    visibility: hidden;
+    padding-left: 5%;
+  }
+  #BurguerLinks a {
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    padding-left: 5%;
+  }
+  #navbarBurguer {
+    justify-content: flex-start;
+  }
+ 
+  .logo{
+    margin-top: 10px;
+    padding-left: 0;
+    font-size: 80px;
+ }
+}
+  
+
+@media screen and (min-width: 769px) and (max-width: 882px){
+    #searchBurguer{
+        width: 39%;}
+    }
+
+/* termina el css del menu hamburguesa */
+
