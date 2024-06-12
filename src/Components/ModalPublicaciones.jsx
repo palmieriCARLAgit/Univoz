@@ -40,7 +40,7 @@ const Modal = () => {
     // alerta
     Swal.fire({
       title: 'Confirmar publicación',
-      html: `¿Estás seguro de que deseas publicar esto?<br><br><strong>Mensaje:</strong> ${message}<br><strong>Tag:</strong> ${tag}`,
+      html: `¿Estás seguro de que deseas publicar esto?<br><br><strong>Título:</strong> ${title}<br><strong>Mensaje:</strong> ${message}<br><strong>Tag:</strong> ${tag}`,
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Publicar',
