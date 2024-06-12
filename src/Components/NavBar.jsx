@@ -3,8 +3,33 @@ import './MenuBurguer.css';
 import { useEffect,useState } from 'react';
 
   
+import './MenuBurguer.css';
+import { useEffect,useState } from 'react';
+
+  
 
 function Navbar() {
+
+    
+    const [isVisible, setIsVisible] = useState(false);
+//   funciones para abrir y cerrar el menu hambuerguesa
+    const ClickOpen = () => {
+      setIsVisible(true);
+    };
+    
+    const ClickClose = () => {
+      setIsVisible(false);
+    };
+ 
+    // intento de funcion para cambiar el bg de los href hamburguesa
+    function hoverActive(){
+        const select=document.querySelector("li")
+        select.style.backgroundColor = '#d6c1e7';
+        body.style.borderLeft = '4px solid #6a1b9a';
+    }
+    
+
+       
 
     
     const [isVisible, setIsVisible] = useState(false);
@@ -58,4 +83,6 @@ function Navbar() {
 
 }
 export default Navbar
+
+
 
