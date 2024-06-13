@@ -16,13 +16,6 @@ function Navbar() {
     const ClickClose = () => {
       setIsVisible(false);
     };
- 
-    // intento de funcion para cambiar el bg de los href hamburguesa
-    function hoverActive(){
-        const select=document.querySelector("li")
-        select.style.backgroundColor = '#d6c1e7';
-        body.style.borderLeft = '4px solid #6a1b9a';
-    }
     
 
        
@@ -39,13 +32,13 @@ function Navbar() {
                {/* menu invisible */}
                 <nav id="navbarBurguer" className={`col-10 nav  ${isVisible ? 'visible '  :'' }`}>  
                    <div>
-                     <button id="cerrar-menu" onClick={ClickClose}><i class="fa-solid fa-x"></i></button>
+                     <button id="cerrar-menu" onClick={ClickClose}><i className="fa-solid fa-x"></i></button>
                      <ul id="BurguerLinks" className="nav-list ">
                         <a href="/" className=" logo">UNIVOZ</a> 
                         <li   className="list-group-item hoverActiveCursor BurguerLinks"><a href="/"><i className="fas fa-house"></i> Inicio</a></li>
                         <li   className="list-group-item hoverActiveCursor BurguerLinks "><a href="/normativas"><i className="fas fa-circle-info"></i> Información</a> </li>
                         <li className="list-group-item hoverActiveCursor BurguerLinks"><a href="/quienes-somos"><i className="fas fa-person"></i> Quiénes Somos</a></li>
-                        <li    className="list-group-item hoverActiveCursor BurguerLinks"><a href="/Login"><i class="fa-solid fa-right-to-bracket"></i>Iniciar sesión</a></li>
+                        <li    className="list-group-item hoverActiveCursor BurguerLinks"><a href="/Login"><i className="fa-solid fa-right-to-bracket"></i>Iniciar sesión</a></li>
                     </ul>
                     </div>
                 </nav> 
