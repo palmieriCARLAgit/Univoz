@@ -74,11 +74,18 @@
     width: 18rem;
     padding: 10px;
     border-radius: 5px;
+    
   }
   .hoverActiveCursor:hover {
+    background-color: #c6c6c679;
+    border-left: 4px solid #6a1b9a;
+  }
+
+  #selectOne {
     background-color: #d6c1e7;
     border-left: 4px solid #6a1b9a;
   }
+
   .nav {
     display: flex;
     position: absolute;

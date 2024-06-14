@@ -16,8 +16,12 @@ function Navbar() {
     const ClickClose = () => {
       setIsVisible(false);
     };
-    
 
+
+    const {selectClick, setSelectClick}= useState("");
+    const claseAplicada= ()=>{
+        setselectClick("selectOne")
+    }
        
     return (
         <>
@@ -35,8 +39,8 @@ function Navbar() {
                      <button id="cerrar-menu" onClick={ClickClose}><i className="fa-solid fa-x"></i></button>
                      <ul id="BurguerLinks" className="nav-list ">
                         <a href="/" className=" logo">UNIVOZ</a> 
-                        <li   className="list-group-item hoverActiveCursor BurguerLinks"><a href="/"><i className="fas fa-house"></i> Inicio</a></li>
-                        <li   className="list-group-item hoverActiveCursor BurguerLinks "><a href="/normativas"><i className="fas fa-circle-info"></i> Información</a> </li>
+                        <li  id="selectOne"  className=" list-group-item hoverActiveCursor BurguerLinks"><a href="/"><i className="fas fa-house"></i> Inicio</a></li>
+                        <li   className=" list-group-item hoverActiveCursor BurguerLinks "><a href="/normativas"><i className="fas fa-circle-info"></i> Información</a> </li>
                         <li className="list-group-item hoverActiveCursor BurguerLinks"><a href="/quienes-somos"><i className="fas fa-person"></i> Quiénes Somos</a></li>
                         <li    className="list-group-item hoverActiveCursor BurguerLinks"><a href="/Login"><i className="fa-solid fa-right-to-bracket"></i>Iniciar sesión</a></li>
                     </ul>
