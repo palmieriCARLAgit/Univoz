@@ -75,7 +75,7 @@
     align-items: center;
     height: 3rem;
     cursor: pointer;
-    width: 19rem;
+    width: 16rem;
     padding: 10px;
     border-radius: 5px;
     ;
@@ -126,15 +126,16 @@
     text-decoration: none;
     color: #333;
     border-radius: 5px;
-    padding-left: 5%;
+    margin-left: 4%;
   }
   #navbarBurguer {
     justify-content: flex-start;
   }
  
-  .logo{
+  #logorspns{
     margin-top: 23px;
     padding-left: 0;
+ 
  }
 }
   
@@ -146,6 +147,13 @@
     .nav{
       max-width: 50%;
     }
+    }
+
+    @media screen and (max-width: 340px){
+      .hoverActiveCursor {
+        width: 13rem;
+      }
+      
     }
 
 /* termina el css del menu hamburguesa */
