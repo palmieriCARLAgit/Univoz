@@ -1,11 +1,13 @@
 import React from 'react';
 import './MenuBurguer.css';
 import { useEffect,useState } from 'react';
-
+import { useLocation } from 'react-router-dom';
   
 
 
 function Navbar() {
+    const location = useLocation();
+
 
     const [isVisible, setIsVisible] = useState(false);
 //   funciones para abrir y cerrar el menu hambuerguesa
@@ -18,11 +20,6 @@ function Navbar() {
     };
 
 
-    const {selectClick, setSelectClick}= useState("");
-    const claseAplicada= ()=>{
-        setselectClick("selectOne")
-    }
-       
     return (
         <>
        {/* navbar adaptado para que incluya el menu hambuerguesa en un mismo codigo */}
@@ -39,10 +36,10 @@ function Navbar() {
                      <button id="cerrar-menu" onClick={ClickClose}><i className="fa-solid fa-x"></i></button>
                      <ul id="BurguerLinks" className="nav-list ">
                         <a href="/" className=" logo">UNIVOZ</a> 
-                        <li  id="selectOne"  className=" list-group-item hoverActiveCursor BurguerLinks"><a href="/"><i className="fas fa-house"></i> Inicio</a></li>
-                        <li   className=" list-group-item hoverActiveCursor BurguerLinks "><a href="/normativas"><i className="fas fa-circle-info"></i> Información</a> </li>
-                        <li className="list-group-item hoverActiveCursor BurguerLinks"><a href="/quienes-somos"><i className="fas fa-person"></i> Quiénes Somos</a></li>
-                        <li    className="list-group-item hoverActiveCursor BurguerLinks"><a href="/Login"><i className="fa-solid fa-right-to-bracket"></i>Iniciar sesión</a></li>
+                        <li   className=" list-group-item hoverActiveCursor BurguerLinks"><a href="/"><i className= "fas fa-house iconSpace"></i> Inicio</a></li>
+                        <li   className=" list-group-item hoverActiveCursor BurguerLinks "><a href="/normativas"><i className= "fas fa-circle-info iconSpace"></i> Información</a> </li>
+                        <li className="list-group-item hoverActiveCursor BurguerLinks"><a href="/quienes-somos"><i className= "fas fa-person iconSpace"></i> Quiénes Somos</a></li>
+                        <li    className="list-group-item hoverActiveCursor BurguerLinks"><a href="/Login"><i className={`fa-solid fa-right-to-bracket iconSpace`}></i>Iniciar sesión</a></li>
                     </ul>
                     </div>
                 </nav> 
