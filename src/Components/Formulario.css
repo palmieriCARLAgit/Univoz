@@ -240,7 +240,7 @@
     transform: scale(0.8);
 } */
 
-@media(max-width: 892px) {
+@media(max-width: 628px) {
     #cajaPadre {
         width: 100%;
     }

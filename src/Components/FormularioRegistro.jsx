@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import 'boxicons/css/boxicons.min.css';
 import './Formulario.css'
+import useRegistro from '../api/useRegistro';
 
 const FormularioRegistro = ({ RegisterForm }) => {
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email1, setEmail1] = useState('');
+  const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
   const [flagRegistro, setFlagRegistro] = useState(0);
+  const { mutate } = useRegistro();
 
   useEffect(() => {
     setUsername('');
-    setEmail('');
-    setPassword('');
+    setEmail1('');
+    setPassword1('');
     setPassword2('');
     setShowPassword(false);
     setShowPassword2(false);
@@ -23,7 +25,7 @@ const FormularioRegistro = ({ RegisterForm }) => {
   }, [flagRegistro]);
 
   const handleRegistrar = () => {
-    if (!username || !email || !password || !password2) {
+    if (!username || !email1 || !password1 || !password2) {
       Swal.fire({
         title: 'Error!',
         text: 'Debe ingresar datos para registrarse',
@@ -34,7 +36,7 @@ const FormularioRegistro = ({ RegisterForm }) => {
       return;
     }
 
-    if (password !== password2) {
+    if (password1 !== password2) {
       Swal.fire({
         title: 'Error!',
         text: 'Las contraseñas no coinciden',
@@ -45,7 +47,7 @@ const FormularioRegistro = ({ RegisterForm }) => {
       return;
     }
 
-    if (!isValidEmail(email.trim())) {
+    if (!isValidEmail(email1.trim())) {
       Swal.fire({
         title: 'Error!',
         text: 'Ingresar correo electrónico válido',
@@ -67,7 +69,7 @@ const FormularioRegistro = ({ RegisterForm }) => {
       return;
     }
 
-    if (!isValidPassword(password)) {
+    if (!isValidPassword(password1)) {
       Swal.fire({
         title: 'Error!',
         text: 'La contraseña debe tener al menos 6 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.',
@@ -77,20 +79,26 @@ const FormularioRegistro = ({ RegisterForm }) => {
       });
       return;
     }
-
-    Swal.fire({
-      title: 'Usuario registrado correctamente!',
-      icon: 'success',
-      html: `
-              <h2>Datos enviados desde el formulario</h2>
-              <h4 style="text-align='left'">Nombre de usuario: ${username}</h4>
-              <h4 style="text-align='left'">Nombre de correo: ${email}</h4>
-              <h4 style="text-align='left'">Nombre de contraseña: ${password}</h4>
-          `,
-      showConfirmButton: false,
-      timer: 5500
+    mutate({username,email1,password1}, {
+      onSuccess: (data) => {
+        Swal.fire({
+          title: 'Usuario registrado correctamente!',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setFlagRegistro(1)
+      },
+      onError:(error)=>{
+        Swal.fire({
+          title: 'El usuario o email ya existe!',
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 3500
+        });
+      }
     })
-    setFlagRegistro(1)
+
   }
 
   const isValidUsuario = (username) => {
@@ -113,11 +121,11 @@ const FormularioRegistro = ({ RegisterForm }) => {
   }
 
   const inputEmail = (correoE) => {
-    setEmail(correoE)
+    setEmail1(correoE)
   }
 
   const inputpassword = (clave) => {
-    setPassword(clave)
+    setPassword1(clave)
   }
 
   const inputpassword2 = (clave2) => {
@@ -129,7 +137,6 @@ const FormularioRegistro = ({ RegisterForm }) => {
   };
 
   const toggleShowPassword2 = () => {
-    console.log('aaa')
     setShowPassword2(!showPassword2);
   };
 
@@ -145,35 +152,35 @@ const FormularioRegistro = ({ RegisterForm }) => {
             <i className='bx bx-user icon'></i>
           </div>
           <div className="input-box" id='iconsblancos'>
-            <input type="email" className="cajatext" id="email" placeholder="Correo electronico" onChange={(e) => inputEmail(e.target.value)} value={email} />
+            <input type="email" className="cajatext" id="email" placeholder="Correo electronico" onChange={(e) => inputEmail(e.target.value)} value={email1} />
             <i className="bx bx-envelope icon"></i>
           </div>
-        <div className="input-box" id='iconsblancos'>
-          <input
-            type={showPassword? 'text' : 'password'}
-            className="cajatext"
-            id="password"
-            placeholder="Contraseña"
-            onChange={(e) => inputpassword(e.target.value)}
-            value={password}
-          />
-          <i className={showPassword? 'bx bx-hide' : 'bx bx-show-alt'} onClick={toggleShowPassword}></i>
-        </div>
-
-        <div className="input-box" id='iconsblancos'>
-          <input
-            type={showPassword2? 'text' : 'password'}
-            className="cajatext"
-            id="password2"
-            placeholder="Repita Contraseña"
-            onChange={(e) => inputpassword2(e.target.value)}
-            value={password2}
-            
-          />
-          <i className={showPassword2? 'bx bx-hide' : 'bx bx-show-alt'} onClick={toggleShowPassword2}></i>
-        </div>
           <div className="input-box" id='iconsblancos'>
-            <button className="input-submit btn-reg" id= "iniciaLogin"  onClick={handleRegistrar}>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              className="cajatext"
+              id="password"
+              placeholder="Contraseña"
+              onChange={(e) => inputpassword(e.target.value)}
+              value={password1}
+            />
+            <i className={showPassword ? 'bx bx-hide' : 'bx bx-show-alt'} onClick={toggleShowPassword}></i>
+          </div>
+
+          <div className="input-box" id='iconsblancos'>
+            <input
+              type={showPassword2 ? 'text' : 'password'}
+              className="cajatext"
+              id="password2"
+              placeholder="Repita Contraseña"
+              onChange={(e) => inputpassword2(e.target.value)}
+              value={password2}
+
+            />
+            <i className={showPassword2 ? 'bx bx-hide' : 'bx bx-show-alt'} onClick={toggleShowPassword2}></i>
+          </div>
+          <div className="input-box" id='iconsblancos'>
+            <button className="input-submit btn-reg" id="iniciaLogin" onClick={handleRegistrar}>
               <span>Registrarse</span>
               <i className="bx bx-right-arrow-alt"></i>
             </button>

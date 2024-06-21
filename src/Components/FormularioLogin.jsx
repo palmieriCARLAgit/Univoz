@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import 'boxicons/css/boxicons.min.css';
 import './Formulario.css'
 import {useNavigate} from "react-router-dom";
+import useLogin from '../api/useLogin';
 
 const FormularioLogin = ({ LoginForm }) => {
   const [userName, setUserName] = useState('');
@@ -10,6 +11,7 @@ const FormularioLogin = ({ LoginForm }) => {
   const [flagLogin, setFlaglogin] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const {mutate} = useLogin();
 
   useEffect(() => {
     console.log("estoy usando useEffect");
@@ -20,8 +22,11 @@ const FormularioLogin = ({ LoginForm }) => {
 
   const handleLogin = () => {
     if (userName && pass) {
-      if (userName === 'admin' && pass === 'admin') {
-        let timerInterval;
+
+     
+      mutate({userName,pass},{
+        onSuccess: (data)=>{
+          let timerInterval;
         Swal.fire({
           title: "Iniciando sesión!",
           html: "Espere unos segundos!.",
@@ -41,13 +46,8 @@ const FormularioLogin = ({ LoginForm }) => {
             Swal.fire({
               title: 'Inicio de sesión correctamente!',
               icon: 'success',
-              html: `
-                <h2>Datos enviados desde el formulario</h2>
-                <h4 style="text-align='left'">Nombre de usuario: ${userName}</h4>
-                <h4 style="text-align='left'">Contraseña: ${pass}</h4>
-              `,
               showConfirmButton: false,
-              timer: 2500
+              timer: 1500
             });
           }
         }).then((result) => {
@@ -60,14 +60,20 @@ const FormularioLogin = ({ LoginForm }) => {
           console.error("Error:", error);
         });
         setFlaglogin(1);
-      } else {
-        Swal.fire({
-          title: 'Usuario o contraseña incorrecta!',
-          icon: 'error',
-          showConfirmButton: false,
-          timer: 3500
-        });
-      }
+        },
+        onError:(error)=>{
+          Swal.fire({
+            title: 'Usuario o contraseña incorrecta!',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 3500
+          });
+        }
+
+      })
+     
+        
+      
     } else {
       Swal.fire({
         title: 'Error!',
