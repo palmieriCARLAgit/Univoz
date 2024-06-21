@@ -9,8 +9,8 @@
 }
 .nav {
   display: flex;
-  align-content: center;
-  justify-content: space-between;
+  /* align-content: center; */
+  /* justify-content: space-between; */
   gap: 2rem;
 }
 #cerrar-menu {
@@ -34,6 +34,10 @@
 } */
 #lupaIcon {
   display: none;
+}
+
+.iconSpace{
+  margin-right: 7px;
 }
 
 @media screen and (max-width: 768px) {
@@ -71,24 +75,31 @@
     align-items: center;
     height: 3rem;
     cursor: pointer;
-    width: 18rem;
+    width: 16rem;
     padding: 10px;
     border-radius: 5px;
+    ;
+    
   }
   .hoverActiveCursor:hover {
+    padding-top: 6px;
     background-color: #d6c1e7;
     border-left: 4px solid #6a1b9a;
   }
+
+ 
+
   .nav {
     display: flex;
     position: absolute;
     flex-direction: column;
     top: 0;
     left: 0;
-    width: 65%;
+    /* width: 65%; */
     align-items: start;
+    max-width: 80%;
     background-color: #ffffff;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.312);
+    box-shadow: 0 0 0 100vmax rgba(112, 78, 111, 0.312);
     padding: 2rem;
     gap: 3rem;
     z-index: 1;
@@ -96,14 +107,14 @@
   .nav-list {
     width: 100%;
     list-style-type: none;
-    align-items: start;
     display: flex;
-    gap: 1rem;
+   
     flex-direction: column;
     height: 100vh;
     padding-left: 0%;
     gap: 3rem;
     font-size: 140%;
+    
   }
 
   .nav.visible {
@@ -115,23 +126,34 @@
     text-decoration: none;
     color: #333;
     border-radius: 5px;
-    padding-left: 5%;
+    margin-left: 4%;
   }
   #navbarBurguer {
     justify-content: flex-start;
   }
  
-  .logo{
-    margin-top: 10px;
+  #logorspns{
+    margin-top: 23px;
     padding-left: 0;
-    font-size: 80px;
+ 
  }
 }
   
 
-@media screen and (min-width: 769px) and (max-width: 882px){
+@media screen and (min-width: 560px) and (max-width: 882px){
     #searchBurguer{
         width: 39%;}
+
+    .nav{
+      max-width: 50%;
+    }
+    }
+
+    @media screen and (max-width: 340px){
+      .hoverActiveCursor {
+        width: 13rem;
+      }
+      
     }
 
 /* termina el css del menu hamburguesa */
