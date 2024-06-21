@@ -71,12 +71,13 @@
     border-radius: 5px;
   }
   
-  .sidebar .menu ul li.active a {
+  .sidebar .menu .active a {
     background-color: #d6c1e7;
     color: #333;
     font-weight: bold;
     border-left: 4px solid #6a1b9a;
   }
+
   .sidebar .menu ul li:not(.active) a:hover {
     background-color: #e0e0e0;
     color: #000;
